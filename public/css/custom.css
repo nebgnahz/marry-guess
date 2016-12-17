@@ -1,0 +1,20 @@
+.button:disabled {
+    border: 1px solid #E3E3E3;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.button.button-primary:disabled,
+button.button-primary:disabled,
+input[type="submit"].button-primary:disabled,
+input[type="reset"].button-primary:disabled,
+input[type="button"].button-primary:disabled {
+    color: #FFF;
+    cursor: not-allowed;
+    background-color: #7CD9F8;
+    border-color: #7CD9F8;
+}
+
+.answer-image {
+    width: 100%;
+}
