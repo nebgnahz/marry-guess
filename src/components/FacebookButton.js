@@ -21,6 +21,9 @@ class FacebookButton extends React.Component {
       window.FB.getLoginStatus(function(response) {
         this.statusChangeCallback(response);
       }.bind(this));
+
+      window.FB.Event.subscribe('auth.statusChange',
+                                (response) => this.statusChangeCallback(response).bind(this));
     }.bind(this);
 
     // Load the SDK asynchronously
@@ -46,7 +49,8 @@ class FacebookButton extends React.Component {
 
   // This is called with the results from from FB.getLoginStatus().
   statusChangeCallback(response) {
-    console.log('statusChangeCallback');
+    this.log("Status change callback");
+    this.log(response.status);
     console.log(response);
     // The response object is returned with a status field that lets the
     // app know the current login status of the person.
@@ -67,6 +71,18 @@ class FacebookButton extends React.Component {
       document.getElementById('status').innerHTML = 'Please log ' +
                                                     'into Facebook.';
     }
+  }
+
+  log(message) {
+    var timestamp = '[' + Date.now() + '] ';
+
+    var text = timestamp + JSON.stringify(message);
+    var node = document.createElement("li");
+    var textnode = document.createTextNode(text);
+    node.appendChild(textnode);
+
+    var log = document.getElementById('logmessage');
+    log.appendChild(node);
   }
 
   // This function is called when someone finishes with the Login

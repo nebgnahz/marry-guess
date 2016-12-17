@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-
 import Header from './components/Header';
-import FacebookButton from './components/FacebookButton';
+import FacebookLogin from 'react-facebook-login';
+// import FacebookButton from './components/FacebookButton';
 
 class App extends Component {
   constructor(props) {
@@ -17,10 +17,10 @@ class App extends Component {
     this.responseFacebook = this.responseFacebook.bind(this);
   }
 
-  setSelfLoggedIn() {
-    console.log('Setting self as logged in');
+  setSelfLoggedIn(state) {
+    this.log('Setting self as logged in');
     this.setState({
-      login: true
+      login: state
     })
   }
 
@@ -32,8 +32,20 @@ class App extends Component {
   }
 
   responseFacebook(response) {
-    console.log(response);
-    this.setSelfLoggedIn();
+    this.log(response);
+    this.setSelfLoggedIn(true);
+  }
+
+  log(message) {
+    var timestamp = '[' + Date.now() + '] ';
+
+    var text = timestamp + JSON.stringify(message);
+    var node = document.createElement("li");
+    var textnode = document.createTextNode(text);
+    node.appendChild(textnode);
+
+    var log = document.getElementById('logmessage');
+    log.appendChild(node);
   }
 
   componentWillMount() {
@@ -73,17 +85,33 @@ class App extends Component {
   }
 
   renderLanding() {
+    let button = null;
+    console.log("renderLanding");
+    console.log(this.state.login);
+    if (this.state.login) {
+      button =
+        <div className="row">
+          <input className="button" type="submit" value="click to see"
+                 onClick={(e)=> this.handleClick(e)}/>
+        </div>;
+    } else {
+      button =
+        <div className="row">
+          <FacebookLogin
+              className="row"
+              appId="1852389581718892"
+              autoLoad={true}
+              fields="name,email,picture"
+              cssClass="button"
+              callback={this.responseFacebook} />
+        </div>
+    }
     return (
       <div>
         <Header title="Where could be my perfect wedding venue matches personality?"/>
-        {this.state.login &&
-         <input className="button" type="submit" value="click to see"
-                onClick={(e)=> this.handleClick(e)}/>
-        }
-        <div className="row">
-          <FacebookButton fb={window.FB} callback={this.responseFacebook} />
-          <p id="status"></p>
-        </div>
+        {button}
+        <p id="status"></p>
+        <ul className="row" id="logmessage" />
       </div>
     )
   }

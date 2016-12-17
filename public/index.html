@@ -14,6 +14,18 @@
           href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
+    <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+    <script>
+     // Initialize Firebase
+     var config = {
+       apiKey: "AIzaSyBn0fsMKT-Su8O-x4PS1Qt9M452pFRIMWs",
+       authDomain: "marry-guess.firebaseapp.com",
+       databaseURL: "https://marry-guess.firebaseio.com",
+       storageBucket: "marry-guess.appspot.com",
+       messagingSenderId: "49823993690"
+     };
+     firebase.initializeApp(config);
+    </script>
     <div class="container">
       <div id="root"></div>
     </div>
