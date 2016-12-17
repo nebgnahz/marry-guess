@@ -61,7 +61,7 @@ class App extends Component {
     return (
       <div>
         <div className="row">
-          <img src="/img/volcano.jpg"
+          <img src="./img/volcano.jpg"
                className="answer-image"
                alt="Volcano Marriage" />
         </div>
