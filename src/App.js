@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Greeting from './components/Greeting';
+import Result from './components/Result';
 import Card from './components/Card';
 import FacebookLogin from 'react-facebook-login';
 // import FacebookButton from './components/FacebookButton';
@@ -11,11 +12,16 @@ class App extends Component {
     super(props);
 
     this.state = {
+      // app state machine
       login: false,
       pending: false,
-      showResult: false,
-      logMessage: [],
+      showResult: true,
 
+      // debugging
+      logMessage: [],
+      logEnabled: false,
+
+      // user information
       username: '',
     };
 
@@ -42,6 +48,13 @@ class App extends Component {
       username: response.name,
       login: true,
     });
+
+    if (response.name === 'Ben Zhang') {
+      // Enable debugging
+      this.setState({
+        logEnabled: true,
+      });
+    }
   }
 
   log(message) {
@@ -107,21 +120,12 @@ class App extends Component {
 
   renderResult() {
     return (
-      <div className="answer">
-        <div className="row">
-          <img src="./img/volcano.jpg"
-               className="answer-image"
-               alt="Volcano Marriage" />
-        </div>
-        <div className="row">
-          <span>Marry near the volcano</span>
-        </div>
-        <div className="row">
-          <input className="button-primary six columns" type="submit" value="Share"
-                 onClick={()=> this.share()}/>
-          <input className="button-primary six columns" type="submit" value="Back"
-                 onClick={()=> this.reset()}/>
-        </div>
+      <div>
+        <Result image="./img/volcano.jpg"
+                text="Marry near the volcano"/>
+
+        <input className="button-primary u-full-width" type="submit" value="Back"
+               onClick={()=> this.reset()}/>
       </div>
     )
   }
@@ -179,9 +183,16 @@ class App extends Component {
 
           {page}
 
-          <input className="button u-full-width" type="submit" value="debug"
+          {this.state.logEnabled &&
+           <div>
+             <input
+                 className="button u-full-width"
+                 type="submit"
+                 value="debug"
                  onClick={()=> this.showLog()}/>
-          <div className="row" id="logmessage" />
+             <div className="row" id="logmessage" />
+           </div>
+          }
         </div>
       </div>
     )

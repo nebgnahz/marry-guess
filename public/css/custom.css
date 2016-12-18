@@ -145,3 +145,17 @@ input[type="button"].button-primary:disabled {
 a.disabled {
     pointer-events: none;
 }
+
+#app-store ul li {
+    display: inline;
+    margin: 0 20px 0 0;
+    margin-bottom: 130px;
+}
+
+#app-store a {
+    text-decoration: none;
+}
+
+.half {
+    width: 42%;
+}
