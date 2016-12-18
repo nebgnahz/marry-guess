@@ -1,8 +1,6 @@
 import React from 'react';
 
 function Result(props) {
-  var share = () => {};
-
   return (
     <div className="answer">
       <div className="row">
