@@ -14,12 +14,21 @@ function Result(props) {
         <span>{props.text}</span>
       </div>
       <div className="row">
-        <input className="button-primary u-full-width"
-               type="submit"
-               value="Share on Facebook"
-               onClick={()=> this.share()}/>
-      </div>
 
+        <div className="six columns fb-share-button"
+             data-href="https://nebgnahz.github.io/marry-quiz"
+             data-layout="button_count"
+             data-size="large"
+             data-mobile-iframe="true">
+          <a className="fb-xfbml-parse-ignore"
+             target="_blank"
+             href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnebgnahz.github.io%2Fmarry-quiz&amp;src=sdkpreparse">
+            <input className="button-primary u-full-width"
+                   type="submit"
+                   value="Share on Facebook" />
+          </a>
+        </div>
+      </div>
       <div className="row">
         Brought to you by <a href="https://ladymarry.com">LadyMarry</a>, an app helping you plan your wedding anywhere, anytime.
       </div>

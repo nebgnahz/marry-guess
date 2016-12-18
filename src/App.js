@@ -111,21 +111,11 @@ class App extends Component {
     )
   }
 
-  reset() {
-
-  }
-
-  share() {
-  }
-
   renderResult() {
     return (
       <div>
         <Result image="./img/volcano.jpg"
                 text="Marry near the volcano"/>
-
-        <input className="button-primary u-full-width" type="submit" value="Back"
-               onClick={()=> this.reset()}/>
       </div>
     )
   }
