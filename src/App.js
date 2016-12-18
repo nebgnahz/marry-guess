@@ -15,7 +15,7 @@ class App extends Component {
       // app state machine
       login: false,
       pending: false,
-      showResult: true,
+      showResult: false,
 
       // debugging
       logMessage: [],

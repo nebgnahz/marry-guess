@@ -4,7 +4,7 @@ function Header(props) {
   return (
     <div className='header'>
       <div className='container'>
-        {props.title}
+        <a href="">{props.title}</a>
       </div>
     </div>
   )
