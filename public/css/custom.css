@@ -1,3 +1,8 @@
+div.row {
+    padding: 2rem 0 2rem 0;
+    overflow:auto;
+}
+
 .button:disabled {
     border: 1px solid #E3E3E3;
     color: #888;
@@ -17,4 +22,89 @@ input[type="button"].button-primary:disabled {
 
 .answer-image {
     width: 100%;
+}
+
+.header {
+    font-size: 3rem;
+    width: 100%;
+    color: white;
+    background: #fd6e82;
+    padding: 1rem;
+}
+
+.pending {
+    text-align: center;
+    margin: 10em 0 0 0;
+}
+
+.question {
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.answer {
+    padding: 1rem;
+}
+
+
+.card {
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    color: #272727;
+    border-radius: 2px;
+}
+
+.card .title {
+    line-height: 3rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.card .content {
+    padding: 1.3rem;
+    font-weight: 300;
+    border-radius: 0 0 2px 2px;
+}
+
+.card p {
+    margin: 0;
+}
+
+.card .action {
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    padding: 1.3rem;
+}
+
+.card a {
+    color: #ffab40;
+    margin-right: 1.3rem;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.card .image {
+    position: relative;
+}
+
+.card .image .actual-image {
+    filter: blur(3px);
+}
+
+.card .image .title {
+    font-size: 2rem;
+    font-weight: bold;
+    width: 70%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1.3rem;
+    color: #fff;
+    text-shadow: -1px 0 #000000,0 1px #000000,1px 0 #000000,0 -1px #000000;
+}
+
+.card .image img {
+    width: 100%;
+    border-radius: 2px 2px 0 0;
 }

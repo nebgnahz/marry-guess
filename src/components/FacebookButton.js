@@ -8,7 +8,7 @@ class FacebookButton extends React.Component {
       message: ""
     };
   }
-  
+
   componentDidMount() {
     window.fbAsyncInit = function() {
       window.FB.init({

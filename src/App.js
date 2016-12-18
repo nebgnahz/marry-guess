@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
+import Card from './components/Card';
 import FacebookLogin from 'react-facebook-login';
 // import FacebookButton from './components/FacebookButton';
 
@@ -62,16 +63,18 @@ class App extends Component {
 
   renderPending() {
     return (
-      <div>
-        <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-        <span className="sr-only">Loading...</span>
+      <div className="row">
+        <div className="pending">&nbsp;
+          <i className="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+          <span className="sr-only">Loading...</span>
+        </div>
       </div>
     )
   }
 
   renderResult() {
     return (
-      <div>
+      <div className="answer">
         <div className="row">
           <img src="./img/volcano.jpg"
                className="answer-image"
@@ -90,26 +93,26 @@ class App extends Component {
     console.log(this.state.login);
     if (this.state.login) {
       button =
-        <div className="row">
-          <input className="button" type="submit" value="click to see"
-                 onClick={(e)=> this.handleClick(e)}/>
-        </div>;
+        <input className="button-primary u-full-width" type="submit" value="click to see"
+               onClick={(e)=> this.handleClick(e)}/>
     } else {
       button =
-        <div className="row">
-          <FacebookLogin
-              className="row"
-              appId="1852389581718892"
-              autoLoad={true}
-              fields="name,email,picture"
-              cssClass="button"
-              callback={this.responseFacebook} />
-        </div>
+        <FacebookLogin
+            className="row"
+            appId="1852389581718892"
+            autoLoad={true}
+            fields="name,email,picture"
+            cssClass="button-primary u-full-width"
+            callback={this.responseFacebook} />
     }
     return (
       <div>
-        <Header title="Where could be my perfect wedding venue matches personality?"/>
-        {button}
+        <div className="row question">
+          <p>Where could be my perfect wedding venue that matches personality?</p>
+        </div>
+        <div className="row">
+          {button}
+        </div>
         <p id="status"></p>
         <ul className="row" id="logmessage" />
       </div>
@@ -117,16 +120,33 @@ class App extends Component {
   }
 
   render() {
+    var page = null;
     console.log('render');
     if (this.state.pending) {
       console.log('render pending ' + this.state.pending);
-      return this.renderPending();
+      page = this.renderPending();
     } else if (this.state.showResult) {
       console.log('render result')
-      return this.renderResult();
+      page = this.renderResult();
     } else {
-      return this.renderLanding();
+      page = this.renderLanding();
     }
+
+    return (
+      <div>
+        <Header title="Marry Guess"/>
+        <div className="container">
+          <div className="row">
+            <Card image="./img/volcano.jpg"
+                  title="Where is your perfect place for marriage?"
+                  content="Play to see where is the best place for you marriage"
+                  link="#"
+                  action="play" />
+          </div>
+          {page}
+        </div>
+      </div>
+    )
   }
 }
 
