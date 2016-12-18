@@ -13,14 +13,14 @@ function Result(props) {
       </div>
       <div className="row">
 
-        <div className="six columns fb-share-button"
-             data-href="https://nebgnahz.github.io/marry-quiz"
+        <div className="u-full-width fb-share-button"
+             data-href="https://nebgnahz.github.io/marry-guess"
              data-layout="button_count"
              data-size="large"
              data-mobile-iframe="true">
           <a className="fb-xfbml-parse-ignore"
              target="_blank"
-             href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnebgnahz.github.io%2Fmarry-quiz&amp;src=sdkpreparse">
+             href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnebgnahz.github.io%2Fmarry-guess&amp;src=sdkpreparse">
             <input className="button-primary u-full-width"
                    type="submit"
                    value="Share on Facebook" />

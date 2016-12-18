@@ -115,7 +115,7 @@ class App extends Component {
     return (
       <div>
         <Result image="./img/volcano.jpg"
-                text="Marry near the volcano"/>
+                text="Near the volcano!"/>
       </div>
     )
   }
