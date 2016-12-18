@@ -117,9 +117,9 @@ class App extends Component {
           <span>Marry near the volcano</span>
         </div>
         <div className="row">
-          <input className="button six columns" type="submit" value="Share"
+          <input className="button-primary six columns" type="submit" value="Share"
                  onClick={()=> this.share()}/>
-          <input className="button six columns" type="submit" value="Back"
+          <input className="button-primary six columns" type="submit" value="Back"
                  onClick={()=> this.reset()}/>
         </div>
       </div>
@@ -145,7 +145,7 @@ class App extends Component {
     return (
       <div className={"row " + (isLoggedIn ? '' : 'disabled')}>
         <Greeting name={this.state.username} />
-        <Card image="./img/volcano.jpg"
+        <Card image="./img/where-wedding.jpg"
               title="Where is the perfect place for your marriage?"
               content="Play to see where is the best place for you marriage"
               link="#"

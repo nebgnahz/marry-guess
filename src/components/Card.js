@@ -10,11 +10,13 @@ function Card(props) {
       <div className="content">
         <p>{props.content}</p>
       </div>
-      <div className="action">
-        <a onClick={props.linkClicked}
-           className={props.enabled ? '' : 'disabled'}
-           href={props.link}>{props.action}</a>
-      </div>
+      <a onClick={props.linkClicked}
+         className={props.enabled ? '' : 'disabled'}
+         href={props.link}>
+        <div className="action">
+          {props.action}
+        </div>
+      </a>
     </div>
   )
 }
