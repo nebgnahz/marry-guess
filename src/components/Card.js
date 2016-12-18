@@ -11,7 +11,9 @@ function Card(props) {
         <p>{props.content}</p>
       </div>
       <div className="action">
-        <a href={props.link}>{props.action}</a>
+        <a onClick={props.linkClicked}
+           className={props.enabled ? '' : 'disabled'}
+           href={props.link}>{props.action}</a>
       </div>
     </div>
   )
@@ -23,6 +25,7 @@ Card.propTypes = {
   content: React.PropTypes.string.isRequired,
   link: React.PropTypes.string.isRequired,
   action: React.PropTypes.string.isRequired,
+  enabled: React.PropTypes.bool,
   linkClicked: React.PropTypes.func,
 };
 
