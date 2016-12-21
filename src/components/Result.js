@@ -1,33 +1,89 @@
 import React from 'react';
 
+const gUrlPrefix = 'https://cloud.githubusercontent.com/assets/941519/';
+const gResultArray = ['volcano',
+                      'castle',
+                      'plane',
+                      'rollercoaster',
+                      'balloon',
+                      'underwater',
+                      'glacier'];
+const gGuessResult = {
+  'volcano': {
+    'text': 'Next to a volcano',
+    'image': '21380482/69209964-c70a-11e6-81d3-8957d50d4719',
+    'description': 'Dummy description for volcano'
+  },
+  'castle': {
+    'text': 'At a Castle',
+    'image': '21380483/6921f99e-c70a-11e6-9e35-a4196b3955e1',
+    'description': 'Dummy description for castle'
+  },
+  'plane': {
+    'text': 'On a plane',
+    'image': '21380480/691fec8a-c70a-11e6-8ba3-5c66c0a27520',
+    'description': 'Dummy description for plane'
+  },
+  'rollercoaster': {
+    'text': 'On a roller coaster',
+    'image': '21380486/6934d9b0-c70a-11e6-8d8c-904876dfd2a8',
+    'description': 'Dummy description for rollercoaster'
+  },
+  'balloon': {
+    'text': 'In a hot balloon',
+    'image': '21380484/69323854-c70a-11e6-8d61-a6ab29847e6e.jpg',
+    'description': 'Dummy description for balloon'
+  },
+  'underwater': {
+    'text': 'Under the water',
+    'image': '21380485/6933f806-c70a-11e6-9d02-ce92ef6f8ae0',
+    'description': 'Dummy description for underwater'
+  },
+  'glacier': {
+    'text': 'On the glacier',
+    'image': '21380481/69204e78-c70a-11e6-8769-3f83f4f2b083',
+    'description': 'Dummy description for glacier'
+  }
+};
+
+const resultText = (name) => gGuessResult[name]['text'];
+const resultImage = (name) => gUrlPrefix + gGuessResult[name]['image'] + '.jpg';
+const resultDescription = (name) => gGuessResult[name]['description'];
+
 function Result(props) {
+  var result = gResultArray[props.index];
+
+  console.log(result);
+  var objectToLike = 'ladymarry';
+  var postLike = function() {
+    console.log("posting my like");
+    window.FB.ui({
+      method: 'feed',
+      link: resultImage(result),
+      caption: resultText(result) + ':' + resultDescription(result)
+    }, function(response){});
+  }
+  
   return (
     <div className="answer">
+      <div className="row answer-text">
+        <span>{resultText(result)}</span>
+      </div>
       <div className="row">
         <img className="answer-image"
-             src={props.image}
+             src={resultImage(result)}
              role="presentation" />
       </div>
       <div className="row">
-        <span>{props.text}</span>
+        <span>{resultDescription(result)}</span>
       </div>
       <div className="row">
-
-        <div className="u-full-width fb-share-button"
-             data-href="https://nebgnahz.github.io/marry-guess"
-             data-layout="button_count"
-             data-size="large"
-             data-mobile-iframe="true">
-          <a className="fb-xfbml-parse-ignore"
-             target="_blank"
-             href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnebgnahz.github.io%2Fmarry-guess&amp;src=sdkpreparse">
-            <input className="button-primary u-full-width"
-                   type="submit"
-                   value="Share on Facebook" />
-          </a>
-        </div>
+        <input className="button-primary u-full-width share-button"
+               type="submit"
+               value="Share on Facebook"
+               onClick={() => postLike()} />
       </div>
-      <div className="row">
+      <div className="row ladymarry">
         Brought to you by <a href="https://ladymarry.com">LadyMarry</a>, an app helping you plan your wedding anywhere, anytime.
       </div>
       <div id="app-store" className="twelve columns">
@@ -51,8 +107,7 @@ function Result(props) {
 }
 
 Result.propTypes = {
-  image: React.PropTypes.string.isRequired,
-  text: React.PropTypes.string.isRequired
+  index: React.PropTypes.number.isRequired,
 };
 
 export default Result;

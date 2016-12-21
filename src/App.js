@@ -20,7 +20,7 @@ class App extends Component {
     this.state = {
       // app state machine
       login: false,
-      pending: true,
+      pending: false,
       showResult: false,
 
       // debugging
@@ -109,10 +109,15 @@ class App extends Component {
   }
 
   renderResult() {
+    var getRandom = (min, max) => {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
+
     return (
       <div>
-        <Result image="./img/volcano.jpg"
-                text="Near the volcano!"/>
+        <Result index={getRandom(0, 7)} />
       </div>
     )
   }
@@ -124,7 +129,7 @@ class App extends Component {
             className="row"
             appId="1852389581718892"
             autoLoad={true}
-            fields="name,email,picture"
+            fields="name,email,picture,publish_actions"
             cssClass="button-primary u-full-width"
             callback={this.responseFacebook} />
       </div>
