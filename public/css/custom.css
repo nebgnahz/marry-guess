@@ -42,12 +42,14 @@ input[type="button"].button-primary:disabled {
     color: inherit;
 }
 
-.pending {
+.pending-icon {
     text-align: center;
+    padding: 5rem 0 5rem 0;
 }
 
 .pending-text {
     margin: 2em;
+    text-align: center;
 }
 
 .question {

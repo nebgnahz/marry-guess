@@ -2,10 +2,16 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Greeting from './components/Greeting';
+import Pending from './components/Pending';
 import Result from './components/Result';
 import Card from './components/Card';
 import FacebookLogin from 'react-facebook-login';
 // import FacebookButton from './components/FacebookButton';
+
+const gAppName = 'Marry Guess';
+const gQuizTitle = 'Where shall I say "I Do"?';
+const gQuizContent = 'Where could be my perfect wedding site that fits personality?';
+const gClickButton = 'let\'s find out';
 
 class App extends Component {
   constructor(props) {
@@ -14,7 +20,7 @@ class App extends Component {
     this.state = {
       // app state machine
       login: false,
-      pending: false,
+      pending: true,
       showResult: false,
 
       // debugging
@@ -89,25 +95,16 @@ class App extends Component {
   }
 
   handleClick(event) {
+    // starting from here, we enter pending state
     console.log('button clicked');
     this.setState({
       pending: true
     })
-    setTimeout(this.setSelfResult.bind(this), 1000);
   }
 
   renderPending() {
-
     return (
-      <div className="row">
-        <div className="one-third column filler">&nbsp;</div>
-        <div className="one-third column filler pending">
-          <i className="fa fa-spinner fa-pulse fa-4x fa-fw"></i>
-          <span className="sr-only">Loading...</span>
-          <p className="pending-text">Searching for the answer to the Ultimate Question of Life, the Universe, and Everything</p>
-        </div>
-        <div className="one-third column filler">&nbsp;</div>
-      </div>
+      <Pending done={this.setSelfResult.bind(this)}/>
     )
   }
 
@@ -140,13 +137,15 @@ class App extends Component {
       <div className={"row " + (isLoggedIn ? '' : 'disabled')}>
         <Greeting name={this.state.username} />
         <Card image="./img/where-wedding.jpg"
-              title="Where is the perfect place for your marriage?"
-              content="Play to see where is the best place for you marriage"
+              title={gQuizTitle}
+              content={gQuizContent}
               link="#"
-              enabled={isLoggedIn}
-              action="play"
-              linkClicked={() => this.handleClick()}
-        />
+              enabled={isLoggedIn} />
+        <br />
+        <input className="button-primary u-full-width"
+               type="submit"
+               value={gClickButton}
+               onClick={()=> this.handleClick()} />
       </div>
     )
   }
@@ -154,10 +153,8 @@ class App extends Component {
   render() {
     var page = null;
     if (this.state.pending) {
-      console.log('render pending ' + this.state.pending);
       page = this.renderPending();
     } else if (this.state.showResult) {
-      console.log('render result')
       page = this.renderResult();
     } else {
       page = this.renderLanding();
@@ -165,7 +162,7 @@ class App extends Component {
 
     return (
       <div>
-        <Header title="Marry Guess"/>
+        <Header title={gAppName}/>
         <div className="container">
           {!this.state.login &&
            this.renderFBLogin()
