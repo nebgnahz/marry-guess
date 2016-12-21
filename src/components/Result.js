@@ -50,11 +50,23 @@ const resultText = (name) => gGuessResult[name]['text'];
 const resultImage = (name) => gUrlPrefix + gGuessResult[name]['image'] + '.jpg';
 const resultDescription = (name) => gGuessResult[name]['description'];
 
+
+const hashCode = (str) => {
+  var hash = 0, i, chr, len;
+  if (str.length === 0) return hash;
+  for (i = 0, len = str.length; i < len; i++) {
+    chr   = str.charCodeAt(i);
+    hash  = ((hash << 5) - hash) + chr;
+    hash |= 0; // Convert to 32bit integer
+  }
+  return hash;
+};
+
 function Result(props) {
-  var result = gResultArray[props.index];
+  var index = hashCode(props.username) % gResultArray.length;
+  var result = gResultArray[index];
 
   console.log(result);
-  var objectToLike = 'ladymarry';
   var postLike = function() {
     console.log("posting my like");
     window.FB.ui({
@@ -107,7 +119,7 @@ function Result(props) {
 }
 
 Result.propTypes = {
-  index: React.PropTypes.number.isRequired,
+  username: React.PropTypes.string.isRequired,
 };
 
 export default Result;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const gPendingTick = 1000;  // ms
+const gPendingTick = 500;  // ms
 const gPendingText = ['Connecting to your Facebook...\n',
                       'Analyzing your public likes and comments...\n',
                       'Defining your personality...\n'];

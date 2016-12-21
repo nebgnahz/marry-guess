@@ -109,15 +109,9 @@ class App extends Component {
   }
 
   renderResult() {
-    var getRandom = (min, max) => {
-      min = Math.ceil(min);
-      max = Math.floor(max);
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    };
-
     return (
       <div>
-        <Result index={getRandom(0, 7)} />
+        <Result username={this.state.username} />
       </div>
     )
   }
@@ -129,7 +123,7 @@ class App extends Component {
             className="row"
             appId="1852389581718892"
             autoLoad={true}
-            fields="name,email,picture,publish_actions"
+            fields="name,email,picture"
             cssClass="button-primary u-full-width"
             callback={this.responseFacebook} />
       </div>
@@ -140,7 +134,6 @@ class App extends Component {
     const isLoggedIn = this.state.login;
     return (
       <div className={"row " + (isLoggedIn ? '' : 'disabled')}>
-        <Greeting name={this.state.username} />
         <Card image="./img/where-wedding.jpg"
               title={gQuizTitle}
               content={gQuizContent}
