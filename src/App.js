@@ -144,6 +144,9 @@ class App extends Component {
                type="submit"
                value={gClickButton}
                onClick={()=> this.handleClick()} />
+        <div className="row" id="anti-virus">
+          <p>Antivirus Protected</p>
+        </div>
       </div>
     )
   }

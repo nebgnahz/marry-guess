@@ -12,37 +12,37 @@ const gGuessResult = {
   'volcano': {
     'text': 'Next to a volcano',
     'image': '21380482/69209964-c70a-11e6-81d3-8957d50d4719',
-    'description': 'Dummy description for volcano'
+    'description': 'You should marry near the volcano for your passion in life'
   },
   'castle': {
     'text': 'At a Castle',
     'image': '21380483/6921f99e-c70a-11e6-9e35-a4196b3955e1',
-    'description': 'Dummy description for castle'
+    'description': 'Castle reflects your taste in the class'
   },
   'plane': {
     'text': 'On a plane',
     'image': '21380480/691fec8a-c70a-11e6-8ba3-5c66c0a27520',
-    'description': 'Dummy description for plane'
+    'description': 'What could be more exciting than flying?'
   },
   'rollercoaster': {
     'text': 'On a roller coaster',
     'image': '21380486/6934d9b0-c70a-11e6-8d8c-904876dfd2a8',
-    'description': 'Dummy description for rollercoaster'
+    'description': 'Thrilling, suspenseful and exhilarating, that\'s it!'
   },
   'balloon': {
     'text': 'In a hot balloon',
     'image': '21380484/69323854-c70a-11e6-8d61-a6ab29847e6e.jpg',
-    'description': 'Dummy description for balloon'
+    'description': 'Higher in the sky.'
   },
   'underwater': {
     'text': 'Under the water',
     'image': '21380485/6933f806-c70a-11e6-9d02-ce92ef6f8ae0',
-    'description': 'Dummy description for underwater'
+    'description': 'Smooth, silent, snuggly, and sleek.'
   },
   'glacier': {
     'text': 'On the glacier',
     'image': '21380481/69204e78-c70a-11e6-8769-3f83f4f2b083',
-    'description': 'Dummy description for glacier'
+    'description': 'Cool, huh~'
   }
 };
 
@@ -72,7 +72,8 @@ function Result(props) {
     window.FB.ui({
       method: 'feed',
       link: resultImage(result),
-      caption: resultText(result) + ':' + resultDescription(result)
+      caption: resultText(result),
+      description: resultDescription(result)
     }, function(response){});
   }
   
