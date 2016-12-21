@@ -9,3 +9,4 @@ git commit -am "Rebuild website"
 git filter-branch -f --prune-empty --subdirectory-filter build
 git push -f origin gh-pages
 git checkout -
+git reset HEAD build
