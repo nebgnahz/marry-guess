@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
-import Greeting from './components/Greeting';
 import Pending from './components/Pending';
 import Result from './components/Result';
 import Card from './components/Card';
