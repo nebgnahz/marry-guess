@@ -41,7 +41,7 @@ const gGuessResult = {
 };
 
 const resultText = (name) => gGuessResult[name]['text'];
-const resultImage = (name) => gUrlPrefix + 'img/places/' + gGuessResult[name] + '.png';
+const resultImage = (name) => gUrlPrefix + '/img/places/' + name + '.png';
 const resultDescription = (name) => gGuessResult[name]['description'];
 
 const hashCode = (str) => {
