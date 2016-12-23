@@ -133,7 +133,6 @@ class App extends Component {
   }
 
   renderLanding() {
-    const isLoggedIn = this.state.login;
     return (
       <div>
         <div className="row">
