@@ -1,0 +1,52 @@
+#progressbar {
+    width: 100%;
+    height: 15px;
+    padding: 2px;
+    margin: .6em 0;
+    border-top: 1.5px #f75c74 solid;
+    border-bottom: 1.5px #f75c74 solid;
+    clear: both;
+
+    /*-- Tune the position a bit --*/
+    margin-top: 50%;
+}
+
+#progress {
+    /*-- Color of the bar --*/
+    background: #f75c74;
+    height: 15px;
+    width: 0%;
+    max-width: 100%;
+    float: left;
+    -webkit-animation: progress 3s 1 forwards;
+    -moz-animation: progress 3s 1 forwards;
+    -ms-animation: progress 3s 1 forwards;
+    animation: progress 3s 1 forwards;
+}
+
+@-webkit-keyframes progress {
+    from { }
+    to { width: 100% }
+}
+
+@-moz-keyframes progress {
+    from { }
+    to { width: 100% }
+}
+
+@-ms-keyframes progress {
+    from { }
+    to { width: 100% }
+}
+
+@keyframes progress {
+    from { }
+    to { width: 100% }
+}
+
+#pending-footer {
+    border-top: 1px #eee solid;
+    bottom: 0;
+    position: fixed;
+    width: 80%;
+}

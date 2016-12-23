@@ -1,0 +1,57 @@
+.answer {
+    padding-top: 1rem;
+}
+
+.answer .row {
+    padding-bottom: 0rem;
+    font-size: 1.3rem;
+}
+
+.answer .row span {
+    font-size: 1.6rem;
+    line-height: 1.0rem;
+}
+
+#share-button {
+    background: #4267b2;
+    border: 1px solid #4267b2;
+    color: #fff;
+    font-family: Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-user-select: none;
+
+    margin-top: -1rem;
+    font-size: 1.1em;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#share-button i {
+    vertical-align: -0.6rem;
+    font-size: 2em;
+    margin-right: 1rem;
+}
+
+#share-button span {
+    font-size: 1.2rem;
+}
+
+#ladymarry {
+    border-top: 1px solid #ddd;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#app-store ul li {
+    display: inline;
+    margin: 0 20px 0 0;
+    margin-bottom: 130px;
+}
+
+#app-store a {
+    text-decoration: none;
+}
+
+#app-store .half {
+    width: 42%;
+}

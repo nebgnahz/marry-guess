@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import './Pending.css';
 
 const gPendingTick = 1000;  // ms
 const gPendingText = ['Connecting to your Facebook...\n',
-                      'Analyzing your public likes and comments...\n',
+                      'Analyzing your profile...\n',
                       'Defining your personality...\n'];
 
 class Pending extends Component {
@@ -11,7 +12,7 @@ class Pending extends Component {
     this.state = {
       done: props.done,
       pendingTextIndex: 0,
-      pendingStatus: [],
+      pendingStatus: gPendingText[0],
     }
 
     console.log("pending constructor called");
@@ -19,16 +20,17 @@ class Pending extends Component {
   }
 
   updatePending() {
-    if (this.state.pendingTextIndex === gPendingText.length) {
+    if (this.state.pendingTextIndex === gPendingText.length - 1) {
       this.state.done();
       return;
     }
 
     var newIndex = this.state.pendingTextIndex + 1;
-    var newStatus = gPendingText[this.state.pendingTextIndex];
+    var newStatus = gPendingText[newIndex];
+    console.log(newStatus);
     this.setState({
       pendingTextIndex: newIndex,
-      pendingStatus: this.state.pendingStatus.concat(newStatus)
+      pendingStatus: newStatus,
     });
     setTimeout(this.updatePending.bind(this), gPendingTick);
   }
@@ -37,17 +39,18 @@ class Pending extends Component {
     return (
       <div>
         <div className="row">
-          <div className="one-third column filler">&nbsp;</div>
-          <div className="one-third column filler pending-icon">
-            <i className="fa fa-spinner fa-pulse fa-4x fa-fw"></i>
-            <span className="sr-only">Loading...</span>
+          <div id="progressbar">
+            <div id="progress" >
+              <div id="pbaranim">
+              </div>
+            </div>
           </div>
-          <div className="one-third column filler">&nbsp;</div>
         </div>
         <div className="row">
-          {this.state.pendingStatus.map(function(status){
-             return <p className="pending-text">{status}</p>;
-           })}
+          <p className="pending-text">{this.state.pendingStatus}</p>
+        </div>
+        <div className="row text-center text-small" id="pending-footer">
+          <p>Smart Quiz Made by LadyMarry</p>
         </div>
       </div>
     )

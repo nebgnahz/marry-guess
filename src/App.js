@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './components/Landing.css';
 import Header from './components/Header';
 import Pending from './components/Pending';
 import Banner from './components/Banner';
@@ -9,8 +10,6 @@ import FacebookLogin from 'react-facebook-login';
 
 const gAppName = 'LadyMarry';  // Use logo here
 const gAppSubtitle = 'Free virtual wedding planning App';
-const gQuizTitle = 'Where shall I say "I Do"?';
-const gQuizContent = 'Where could be my perfect wedding site that fits personality?';
 const gClickButton = 'Show Me Now';
 const gLogInFbMessage = 'Log in with Facebook to see result';
 
@@ -62,6 +61,8 @@ class App extends Component {
         logEnabled: true,
       });
     }
+
+    this.handleClick();
   }
 
   log(message) {
@@ -97,7 +98,7 @@ class App extends Component {
 
   handleClick(event) {
     // starting from here, we enter pending state
-    console.log('button clicked');
+    console.log('Start button is clicked, we enter pending state.');
     this.setState({
       pending: true
     })
@@ -123,9 +124,9 @@ class App extends Component {
         <FacebookLogin
             className="row"
             appId="1852389581718892"
-            autoLoad={true}
             fields="name,email,picture"
-            cssClass="button-primary u-full-width"
+            cssClass="show-me-now-button"
+            textButton={gClickButton}
             callback={this.responseFacebook} />
       </div>
     );
@@ -139,10 +140,7 @@ class App extends Component {
           <Banner image="./img/where-bg.jpg"/>
         </div>
         <div className="row">
-          <input className="button-primary show-me-now-button"
-                 type="submit"
-                 value={gClickButton}
-                 onClick={()=> this.handleClick()} />
+          {this.renderFBLogin()}
           <p className="text-center text-small">{gLogInFbMessage}</p>
         </div>
         <div className="row text-small" id="anti-virus">

@@ -1,8 +1,12 @@
 import React from 'react';
+import './Banner.css'
+
+// const gQuizTitle = 'Where shall I say "I Do"?';
+// const gQuizContent = 'Where could be my perfect wedding site that fits personality?';
 
 function Banner(props) {
   return (
-    <div className="row">
+    <div className="row banner">
       <div className="banner-box">
         <p>Where could be my</p>
         <p className="banner-text-fancy">Perfect Wedding Venue</p>
@@ -16,12 +20,6 @@ function Banner(props) {
 
 Banner.propTypes = {
   image: React.PropTypes.string.isRequired,
-  title: React.PropTypes.string.isRequired,
-  content: React.PropTypes.string.isRequired,
-  link: React.PropTypes.string.isRequired,
-  action: React.PropTypes.string.isRequired,
-  enabled: React.PropTypes.bool,
-  linkClicked: React.PropTypes.func,
 };
 
 export default Banner;

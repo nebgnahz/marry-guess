@@ -57,27 +57,13 @@ div.row {
     padding: 1rem;
 }
 
-.answer {
-    padding: 1rem;
-}
-
-.answer-text {
-    padding-top: 1rem;
-    font-size: 2rem;
-    text-align: center;
-}
-
-.ladymarry {
-    border-top: 1px solid #ddd;
-}
-
 #anti-virus {
     text-align: center;
     border-top: 1px solid #ddd;
     color: #333;
 }
 
-.share-button {
+#share-button {
     background: #e9e9e9 url(../img/F_icon.svg.png);
     background-repeat: no-repeat;
     background-top: 1rem;
@@ -149,67 +135,6 @@ div.row {
     filter: blur(5px);
 }
 
-img.banner-image {
-    max-width: 100%;
-    width: 100%;
-    filter: blur(1px);
-    border:1px solid #021a40;
-}
-
-div.banner-box {
-    /* Center */
-    position: absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    width: 70%;
-    height: 35%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15%;
-    margin-bottom: 15%;
-
-    border: 1px solid white;
-    background: #222;
-    opacity: 0.6;
-    color: white;
-    text-align: center;
-
-    /* Overlay on top of the image */
-    z-index: 1;
-}
-
-div.banner-box p {
-    font-family: Arial;
-    font-style: italic;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    line-height: 0.6;
-    font-size: 1.7rem;
-}
-
-div.banner-box .banner-text-fancy {
-    font-family: cursive;
-    font-size: 2rem;
-}
-
-#white-line {
-    width: 20%;
-    margin-top: 2.5rem;
-    margin-left: 40%;
-    margin-right: 40%;
-    border-top: 1px solid white;
-}
-
-/* Show Me Now button */
-input[type="submit"].button-primary {
-    text-transform: none;
-    background: #f75c74;
-    border-color: #f75c74;
-    font-size: 1.5rem;
-}
-
 .text-center {
     text-align: center;
 }
@@ -217,12 +142,6 @@ input[type="submit"].button-primary {
 .text-small {
     font-size: 1rem;
     line-height: 1rem;
-}
-
-.show-me-now-button {
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
 }
 
 .card .image .title {
@@ -251,18 +170,4 @@ input[type="submit"].button-primary {
 
 a.disabled {
     pointer-events: none;
-}
-
-#app-store ul li {
-    display: inline;
-    margin: 0 20px 0 0;
-    margin-bottom: 130px;
-}
-
-#app-store a {
-    text-decoration: none;
-}
-
-#app-store .half {
-    width: 42%;
 }

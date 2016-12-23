@@ -1,4 +1,5 @@
 import React from 'react';
+import './Result.css';
 
 const gUrlPrefix = 'https://cloud.githubusercontent.com/assets/941519/';
 const gResultArray = ['volcano',
@@ -10,9 +11,9 @@ const gResultArray = ['volcano',
                       'glacier'];
 const gGuessResult = {
   'volcano': {
-    'text': 'Next to a volcano',
+    'text': 'Marry at a volcano',
     'image': '21380482/69209964-c70a-11e6-81d3-8957d50d4719',
-    'description': 'You should marry near the volcano for your passion in life'
+    'description': 'How brave, bold and creative you are!'
   },
   'castle': {
     'text': 'At a Castle',
@@ -50,7 +51,6 @@ const resultText = (name) => gGuessResult[name]['text'];
 const resultImage = (name) => gUrlPrefix + gGuessResult[name]['image'] + '.jpg';
 const resultDescription = (name) => gGuessResult[name]['description'];
 
-
 const hashCode = (str) => {
   var hash = 0, i, chr, len;
   if (str.length === 0) return hash;
@@ -76,10 +76,13 @@ function Result(props) {
       description: resultDescription(result)
     }, function(response){});
   }
-  
+
   return (
     <div className="answer">
-      <div className="row answer-text">
+      <div className="row">
+        {props.username ? props.username + ', here' : 'Here'} is your perfect wedding venue:
+      </div>
+      <div className="row">
         <span>{resultText(result)}</span>
       </div>
       <div className="row">
@@ -88,18 +91,19 @@ function Result(props) {
              role="presentation" />
       </div>
       <div className="row">
-        <span>{resultDescription(result)}</span>
+        <p>{resultDescription(result)}</p>
       </div>
       <div className="row">
-        <input className="button-primary u-full-width share-button"
-               type="submit"
-               value="Share on Facebook"
-               onClick={() => postLike()} />
+        <button className="button-primary" id="share-button"
+                onClick={postLike}>
+          <i className="fa fa-facebook-square"></i>
+          <span>Share on Facebook</span>
+        </button>
       </div>
-      <div className="row ladymarry">
-        Brought to you by <a href="https://ladymarry.com">LadyMarry</a>, an app helping you plan your wedding anywhere, anytime.
+      <div className="row" id="ladymarry">
+        Enter an estimate date, and get a customized wedding checklist on <a href="https://ladymarry.com">LadyMarry</a> App. Download the app and create one Today!
       </div>
-      <div id="app-store" className="twelve columns">
+      <div id="app-store" className="row twelve columns">
         <ul>
           <li>
             <a href="https://play.google.com/store/apps/details?id=com.fotavo.todolist.ladymarry"
