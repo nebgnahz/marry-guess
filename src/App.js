@@ -2,15 +2,17 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Pending from './components/Pending';
+import Banner from './components/Banner';
 import Result from './components/Result';
-import Card from './components/Card';
 import FacebookLogin from 'react-facebook-login';
 // import FacebookButton from './components/FacebookButton';
 
-const gAppName = 'Marry Guess';
+const gAppName = 'LadyMarry';  // Use logo here
+const gAppSubtitle = 'Free virtual wedding planning App';
 const gQuizTitle = 'Where shall I say "I Do"?';
 const gQuizContent = 'Where could be my perfect wedding site that fits personality?';
-const gClickButton = 'let\'s find out';
+const gClickButton = 'Show Me Now';
+const gLogInFbMessage = 'Log in with Facebook to see result';
 
 class App extends Component {
   constructor(props) {
@@ -132,19 +134,19 @@ class App extends Component {
   renderLanding() {
     const isLoggedIn = this.state.login;
     return (
-      <div className={"row " + (isLoggedIn ? '' : 'disabled')}>
-        <Card image="./img/where-wedding.jpg"
-              title={gQuizTitle}
-              content={gQuizContent}
-              link="#"
-              enabled={isLoggedIn} />
-        <br />
-        <input className="button-primary u-full-width"
-               type="submit"
-               value={gClickButton}
-               onClick={()=> this.handleClick()} />
-        <div className="row" id="anti-virus">
-          <p>Antivirus Protected</p>
+      <div>
+        <div className="row">
+          <Banner image="./img/where-bg.jpg"/>
+        </div>
+        <div className="row">
+          <input className="button-primary show-me-now-button"
+                 type="submit"
+                 value={gClickButton}
+                 onClick={()=> this.handleClick()} />
+          <p className="text-center text-small">{gLogInFbMessage}</p>
+        </div>
+        <div className="row text-small" id="anti-virus">
+          <p>Antivirus Protected by LadyMarry</p>
         </div>
       </div>
     )
@@ -162,12 +164,9 @@ class App extends Component {
 
     return (
       <div>
-        <Header title={gAppName}/>
+        <Header title={gAppName}
+                subtitle={gAppSubtitle}/>
         <div className="container">
-          {!this.state.login &&
-           this.renderFBLogin()
-          }
-
           {page}
 
           {this.state.logEnabled &&

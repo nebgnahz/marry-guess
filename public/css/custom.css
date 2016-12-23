@@ -3,25 +3,8 @@ body {
 }
 
 div.row {
-    padding: 2rem 0 2rem 0;
+    padding: 1rem 0 1rem 0;
     overflow:auto;
-}
-
-.button:disabled {
-    border: 1px solid #E3E3E3;
-    color: #888;
-    cursor: not-allowed;
-}
-
-.button.button-primary:disabled,
-button.button-primary:disabled,
-input[type="submit"].button-primary:disabled,
-input[type="reset"].button-primary:disabled,
-input[type="button"].button-primary:disabled {
-    color: #FFF;
-    cursor: not-allowed;
-    background-color: #7CD9F8;
-    border-color: #7CD9F8;
 }
 
 .answer-image {
@@ -29,12 +12,29 @@ input[type="button"].button-primary:disabled {
 }
 
 .header {
-    font-size: 2.5rem;
     width: 100%;
     color: white;
-    background: #fd6e82;
+    background: #f75c74;  /* LadyMarry color */
     padding: 1rem;
     text-align: center;
+}
+
+.header-image {
+    padding-top: 0.5rem;
+    margin-bottom: -0.5rem;
+    height: 4rem;
+}
+
+.filter {
+  -webkit-filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
+}
+
+.header-subtitle {
+    color: #555;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: -0.3rem;
 }
 
 .header a {
@@ -141,12 +141,88 @@ input[type="button"].button-primary:disabled {
     position: relative;
 }
 
-.card .image .actual-image {
+.blurry {
     filter: blur(3px);
 }
 
 .disabled {
     filter: blur(5px);
+}
+
+img.banner-image {
+    max-width: 100%;
+    width: 100%;
+    filter: blur(1px);
+    border:1px solid #021a40;
+}
+
+div.banner-box {
+    /* Center */
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    width: 70%;
+    height: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    margin-bottom: 15%;
+
+    border: 1px solid white;
+    background: #222;
+    opacity: 0.6;
+    color: white;
+    text-align: center;
+
+    /* Overlay on top of the image */
+    z-index: 1;
+}
+
+div.banner-box p {
+    font-family: Arial;
+    font-style: italic;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    line-height: 0.6;
+    font-size: 1.7rem;
+}
+
+div.banner-box .banner-text-fancy {
+    font-family: cursive;
+    font-size: 2rem;
+}
+
+#white-line {
+    width: 20%;
+    margin-top: 2.5rem;
+    margin-left: 40%;
+    margin-right: 40%;
+    border-top: 1px solid white;
+}
+
+/* Show Me Now button */
+input[type="submit"].button-primary {
+    text-transform: none;
+    background: #f75c74;
+    border-color: #f75c74;
+    font-size: 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-small {
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+.show-me-now-button {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .card .image .title {
