@@ -32,6 +32,7 @@ class App extends Component {
     };
 
     this.responseFacebook = this.responseFacebook.bind(this);
+    this.fbClicked = this.fbClicked.bind(this);
   }
 
   setSelfLoggedIn(state) {
@@ -46,6 +47,12 @@ class App extends Component {
       pending: false,
       showResult: true,
     })
+  }
+
+  fbClicked() {
+    if (this.state.login) {
+      this.handleClick();
+    }
   }
 
   responseFacebook(response) {
@@ -127,6 +134,7 @@ class App extends Component {
             fields="name,email,picture"
             cssClass="show-me-now-button"
             textButton={gClickButton}
+            onClick={this.fbClicked}
             callback={this.responseFacebook} />
       </div>
     );

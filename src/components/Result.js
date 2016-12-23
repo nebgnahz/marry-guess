@@ -1,7 +1,7 @@
 import React from 'react';
 import './Result.css';
 
-const gUrlPrefix = 'https://cloud.githubusercontent.com/assets/941519/';
+const gUrlPrefix = 'http://ladymarry.xyz';
 const gResultArray = ['volcano',
                       'castle',
                       'plane',
@@ -12,43 +12,36 @@ const gResultArray = ['volcano',
 const gGuessResult = {
   'volcano': {
     'text': 'Marry at a volcano',
-    'image': '21380482/69209964-c70a-11e6-81d3-8957d50d4719',
     'description': 'How brave, bold and creative you are!'
   },
   'castle': {
     'text': 'At a Castle',
-    'image': '21380483/6921f99e-c70a-11e6-9e35-a4196b3955e1',
     'description': 'Castle reflects your taste in the class'
   },
   'plane': {
     'text': 'On a plane',
-    'image': '21380480/691fec8a-c70a-11e6-8ba3-5c66c0a27520',
     'description': 'What could be more exciting than flying?'
   },
   'rollercoaster': {
     'text': 'On a roller coaster',
-    'image': '21380486/6934d9b0-c70a-11e6-8d8c-904876dfd2a8',
     'description': 'Thrilling, suspenseful and exhilarating, that\'s it!'
   },
   'balloon': {
     'text': 'In a hot balloon',
-    'image': '21380484/69323854-c70a-11e6-8d61-a6ab29847e6e.jpg',
     'description': 'Higher in the sky.'
   },
   'underwater': {
     'text': 'Under the water',
-    'image': '21380485/6933f806-c70a-11e6-9d02-ce92ef6f8ae0',
     'description': 'Smooth, silent, snuggly, and sleek.'
   },
   'glacier': {
     'text': 'On the glacier',
-    'image': '21380481/69204e78-c70a-11e6-8769-3f83f4f2b083',
     'description': 'Cool, huh~'
   }
 };
 
 const resultText = (name) => gGuessResult[name]['text'];
-const resultImage = (name) => gUrlPrefix + gGuessResult[name]['image'] + '.jpg';
+const resultImage = (name) => gUrlPrefix + 'img/places/' + gGuessResult[name] + '.png';
 const resultDescription = (name) => gGuessResult[name]['description'];
 
 const hashCode = (str) => {

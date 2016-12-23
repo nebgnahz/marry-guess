@@ -1,9 +1,17 @@
-/* Show Me Now button */
-input[type="submit"].button-primary {
+.show-me-now-button,
+button:active {
     text-transform: none;
+    color: #fff;
     background: #f75c74;
     border-color: #f75c74;
-    font-size: 1.5rem;
+}
+
+.show-me-now-button,
+button:hover {
+    text-transform: none;
+    color: #fff;
+    background: #f75c74;
+    border-color: #f75c74;
 }
 
 .show-me-now-button {
