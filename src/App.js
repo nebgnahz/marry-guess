@@ -51,25 +51,35 @@ class App extends Component {
 
   fbClicked() {
     if (this.state.login) {
+      console.log('clicked fb button and logged in');
       this.handleClick();
     }
   }
 
   responseFacebook(response) {
     this.log(response);
-    this.setState({
-      username: response.name,
-      login: true,
-    });
-
-    if (response.name === 'Ben Zhang') {
-      // Enable debugging
-      this.setState({
-        logEnabled: true,
-      });
+    console.log(response);
+    if (response.status === 'unknown') {
+      alert('You must log in Facebook in order to proceed');
+      return;
     }
 
-    this.handleClick();
+    if (response.name !== '') {
+      console.log('valid login');
+      this.setState({
+        username: response.name,
+        login: true,
+      });
+
+      if (response.name === 'Ben Zhang') {
+        // Enable debugging
+        this.setState({
+          logEnabled: true,
+        });
+      }
+
+      this.handleClick();
+    }
   }
 
   log(message) {

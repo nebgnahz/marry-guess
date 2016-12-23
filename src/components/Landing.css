@@ -14,6 +14,14 @@ button:hover {
     border-color: #f75c74;
 }
 
+.show-me-now-button,
+button:visited {
+    text-transform: none;
+    color: #fff;
+    background: #f75c74;
+    border-color: #f75c74;
+}
+
 .show-me-now-button {
     text-transform: none;
     background: #f75c74;
