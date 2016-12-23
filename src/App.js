@@ -113,13 +113,15 @@ class App extends Component {
 
   renderPending() {
     return (
-      <Pending done={this.setSelfResult.bind(this)}/>
+      <div className="container">
+        <Pending done={this.setSelfResult.bind(this)}/>
+      </div>
     )
   }
 
   renderResult() {
     return (
-      <div>
+      <div className="container">
         <Result username={this.state.username} />
       </div>
     )
@@ -146,12 +148,14 @@ class App extends Component {
         <div className="row">
           <Banner image="./img/where-bg.jpg"/>
         </div>
-        <div className="row">
-          {this.renderFBLogin()}
-          <p className="text-center text-small">{gLogInFbMessage}</p>
-        </div>
-        <div className="row text-small" id="anti-virus">
-          <p>Antivirus Protected by LadyMarry</p>
+        <div className="container">
+          <div className="row">
+            {this.renderFBLogin()}
+            <p className="text-center text-small" id="fb-message">{gLogInFbMessage}</p>
+          </div>
+          <div className="row text-small" id="anti-virus">
+            <p>Antivirus Protected by LadyMarry</p>
+          </div>
         </div>
       </div>
     )
@@ -171,20 +175,18 @@ class App extends Component {
       <div>
         <Header title={gAppName}
                 subtitle={gAppSubtitle}/>
-        <div className="container">
-          {page}
+        {page}
 
-          {this.state.logEnabled &&
-           <div>
-             <input
-                 className="button u-full-width"
-                 type="submit"
-                 value="debug"
-                 onClick={()=> this.showLog()}/>
-             <div className="row" id="logmessage" />
-           </div>
-          }
-        </div>
+        {this.state.logEnabled &&
+         <div>
+           <input
+               className="button u-full-width"
+               type="submit"
+               value="debug"
+               onClick={()=> this.showLog()}/>
+           <div className="row" id="logmessage" />
+         </div>
+        }
       </div>
     )
   }

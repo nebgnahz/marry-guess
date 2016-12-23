@@ -1,11 +1,9 @@
 img.banner-image {
-    max-width: 100%;
     width: 100%;
-    filter: blur(1px);
-    border:1px solid #021a40;
 }
 
 .banner {
+    margin-top: 3rem;
     position: relative;
 }
 
@@ -22,9 +20,8 @@ div.banner-box {
     margin-top: 10%;
     margin-bottom: 10%;
 
-    border: 1px solid white;
-    background: #222;
-    opacity: 0.6;
+    border: 2px solid white;
+    background: rgba(2, 2, 2, 0.6);
     color: white;
     text-align: center;
 
@@ -52,7 +49,7 @@ div.banner-box .banner-text-fancy {
 
 #white-line {
     width: 20%;
-    margin-top: 13%;
+    margin-top: 18%;
     margin-left: 40%;
     margin-right: 40%;
     border-top: 1px solid white;

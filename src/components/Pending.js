@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Pending.css';
 
-const gPendingTick = 1000;  // ms
+const gPendingTick = 2000;  // ms
 const gPendingText = ['Connecting to your Facebook...\n',
                       'Analyzing your profile...\n',
                       'Defining your personality...\n'];

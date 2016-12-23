@@ -25,3 +25,7 @@ button:hover {
     margin-left: 15%;
     margin-right: 15%;
 }
+
+#fb-message {
+    margin-top: -1.2rem;
+}
