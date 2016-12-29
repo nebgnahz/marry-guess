@@ -59,10 +59,6 @@ class App extends Component {
   responseFacebook(response) {
     this.log(response);
     console.log(response);
-    if (response.status === undefined || response.status === 'unknown') {
-      alert('You must log in Facebook in order to proceed');
-      return;
-    }
 
     if (response.name !== '') {
       console.log('valid login');
@@ -79,6 +75,11 @@ class App extends Component {
       }
 
       this.handleClick();
+    }
+
+    if (response.status === undefined || response.status === 'unknown') {
+      alert('You must log in Facebook in order to proceed');
+      return;
     }
   }
 
