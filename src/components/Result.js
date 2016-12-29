@@ -56,6 +56,8 @@ const hashCode = (str) => {
 };
 
 function Result(props) {
+  var firstName = props.username.split(' ').slice(0, -1).join(' ');
+
   var index = hashCode(props.username) % gResultArray.length;
   var result = gResultArray[index];
 
@@ -78,7 +80,7 @@ function Result(props) {
       <img className="answer-image-2" src={resultImage(result)}
            role="presentation"/>
       <div className="row">
-        <p>{(props.username ? props.username + ',' : '') + resultDescription(result)}</p>
+        <p>{(props.username ? firstName + ',' : '') + resultDescription(result)}</p>
       </div>
       <div className="row">
         <button className="button-primary" id="share-button"
