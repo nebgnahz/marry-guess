@@ -75,6 +75,7 @@ class App extends Component {
       }
 
       this.handleClick();
+      return;
     }
 
     if (response.status === undefined || response.status === 'unknown') {

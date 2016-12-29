@@ -11,32 +11,44 @@ const gResultArray = ['volcano',
                       'glacier'];
 const gGuessResult = {
   'volcano': {
-    'text': 'Marry at a volcano',
-    'description': 'How brave and creative you are!'
+    'text': 'Marry at a Volcano',
+    'description': 'how brave and creative you are!'
   },
   'castle': {
     'text': 'At a Castle',
     'description': 'Prince and Princess, live like a dream!'
   },
   'plane': {
-    'text': 'On a plane',
+    'text': 'On a Plane',
     'description': 'What could be more exciting than flying?'
   },
   'rollercoaster': {
-    'text': 'On a roller coaster',
+    'text': 'On a Roller Coaster',
     'description': 'Thrilling, suspenseful and exhilarating, that\'s it!'
   },
   'balloon': {
-    'text': 'In a hot balloon',
+    'text': 'In a Hot Balloon',
     'description': 'Higher in the sky.'
   },
   'underwater': {
-    'text': 'Under the water',
-    'description': 'Smooth, silent, snuggly, and sleek.'
+    'text': 'Under the Water',
+    'description': ''
   },
   'glacier': {
-    'text': 'On the glacier',
-    'description': 'Cool, huh~'
+    'text': 'On the Glacier',
+    'description': ''
+  },
+  'boat': {
+    'text': 'On a Boat',
+    'description': ''
+  },
+  'treehouse': {
+    'text': 'In a Tree House',
+    'description': ''
+  },
+  'museum': {
+    'text': 'In a Museum',
+    'description': ''
   }
 };
 
@@ -74,14 +86,14 @@ function Result(props) {
 
   return (
     <div className="answer">
+      <div className="row">
+        <p>{(props.username ? firstName + ', t' : 'T') + 'he perfect wedding venue for you: '}</p>
+      </div>
       <div className="answer-text-box">
         <p>{resultText(result)}</p>
       </div>
       <img className="answer-image-2" src={resultImage(result)}
            role="presentation"/>
-      <div className="row">
-        <p>{(props.username ? firstName + ',' : '') + resultDescription(result)}</p>
-      </div>
       <div className="row">
         <button className="button-primary" id="share-button"
                 onClick={postLike}>

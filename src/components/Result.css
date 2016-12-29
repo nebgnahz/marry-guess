@@ -1,7 +1,6 @@
 .answer {
     position: relative;
-    margin-top: 0rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 .answer .row {
@@ -14,6 +13,10 @@
     line-height: 1.0rem;
 }
 
+.answer p {
+    margin-bottom: 1rem;
+}
+
 #share-button {
     background: #4267b2;
     border: 1px solid #4267b2;
@@ -22,10 +25,10 @@
     -webkit-font-smoothing: antialiased;
     -webkit-user-select: none;
 
-    margin-top: -1rem;
+    margin-left: 10%;
+    margin-top: 0.5rem;
     font-size: 1.1em;
     width: 80%;
-    margin-left: 10%;
 }
 
 #share-button i {
@@ -50,6 +53,10 @@
     margin-bottom: 130px;
 }
 
+#app-store {
+    padding-top: 0rem;
+}
+
 #app-store a {
     text-decoration: none;
 }
@@ -66,7 +73,7 @@
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10%;
+    margin-top: 25%;
     width: 80%;
     height: 4.4rem;
     border: 1px solid black;
