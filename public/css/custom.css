@@ -4,7 +4,7 @@ body {
 
 div.row {
     padding: 1rem 0 1rem 0;
-    overflow:auto;
+    overflow: auto;
 }
 
 .answer-image {
@@ -15,14 +15,14 @@ div.row {
     width: 100%;
     color: white;
     background: #f75c74;  /* LadyMarry color */
-    padding: 1rem;
+    padding: 0.9rem;
     text-align: center;
 }
 
 .header-image {
-    padding-top: 0.5rem;
-    margin-bottom: -0.5rem;
-    height: 4rem;
+    padding-top: 0.6rem;
+    margin-bottom: -0.6rem;
+    height: 3.7rem;
 }
 
 .filter {
@@ -31,7 +31,7 @@ div.row {
 }
 
 .header-subtitle {
-    color: #666;
+    color: #f3b8b8;
     font-size: 1.5rem;
     font-style: italic;
     margin-bottom: -0.3rem;

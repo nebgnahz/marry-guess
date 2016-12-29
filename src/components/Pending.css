@@ -1,10 +1,8 @@
 #progressbar {
-    width: 100%;
+    width: 95%;
     height: 5px;
-    padding: 2px;
     margin: .6em 0;
-    border-top: 1.5px #f75c74 solid;
-    border-bottom: 1.5px #f75c74 solid;
+    border: 1.5px #f75c74 solid;
     clear: both;
 
     /*-- Tune the position a bit --*/

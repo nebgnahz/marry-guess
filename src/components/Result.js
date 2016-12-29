@@ -12,11 +12,11 @@ const gResultArray = ['volcano',
 const gGuessResult = {
   'volcano': {
     'text': 'Marry at a volcano',
-    'description': 'How brave, bold and creative you are!'
+    'description': 'How brave and creative you are!'
   },
   'castle': {
     'text': 'At a Castle',
-    'description': 'Castle reflects your taste in the class'
+    'description': 'Prince and Princess, live like a dream!'
   },
   'plane': {
     'text': 'On a plane',
@@ -72,25 +72,19 @@ function Result(props) {
 
   return (
     <div className="answer">
-      <div className="row">
-        {props.username ? props.username + ', here' : 'Here'} is your perfect wedding venue:
+      <div className="answer-text-box">
+        <p>{resultText(result)}</p>
       </div>
+      <img className="answer-image-2" src={resultImage(result)}
+           role="presentation"/>
       <div className="row">
-        <span>{resultText(result)}</span>
-      </div>
-      <div className="row">
-        <img className="answer-image"
-             src={resultImage(result)}
-             role="presentation" />
-      </div>
-      <div className="row">
-        <p>{resultDescription(result)}</p>
+        <p>{(props.username ? props.username + ',' : '') + resultDescription(result)}</p>
       </div>
       <div className="row">
         <button className="button-primary" id="share-button"
                 onClick={postLike}>
           <i className="fa fa-facebook-square"></i>
-          <span>Share on Facebook</span>
+          <span>SHARE ON FACEBOOK</span>
         </button>
       </div>
       <div className="row" id="ladymarry">

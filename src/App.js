@@ -9,7 +9,7 @@ import FacebookLogin from 'react-facebook-login';
 // import FacebookButton from './components/FacebookButton';
 
 const gAppName = 'LadyMarry';  // Use logo here
-const gAppSubtitle = 'Free virtual wedding planning App';
+const gAppSubtitle = 'Free Virtual Wedding Planner App';
 const gClickButton = 'Show Me Now';
 const gLogInFbMessage = 'Log in with Facebook to see result';
 
@@ -59,7 +59,7 @@ class App extends Component {
   responseFacebook(response) {
     this.log(response);
     console.log(response);
-    if (response.status === 'unknown') {
+    if (response.status === undefined || response.status === 'unknown') {
       alert('You must log in Facebook in order to proceed');
       return;
     }

@@ -1,5 +1,7 @@
 .answer {
-    padding-top: 1rem;
+    position: relative;
+    margin-top: 0rem;
+    padding-top: 2rem;
 }
 
 .answer .row {
@@ -54,4 +56,32 @@
 
 #app-store .half {
     width: 42%;
+}
+
+.answer-text-box {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    width: 80%;
+    height: 4.4rem;
+    border: 1px solid black;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1px;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    text-align: center;
+
+    /* Overlay on top of the image */
+    z-index: 1;
+}
+
+.answer-image-2 {
+    width: 100%;
+    border-radius: 5px;
 }
