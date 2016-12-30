@@ -8,10 +8,14 @@ const gResultArray = ['volcano',
                       'rollercoaster',
                       'balloon',
                       'underwater',
-                      'glacier'];
+                      'glacier',
+                      'boat',
+                      'treehouse',
+                      'museum'];
+
 const gGuessResult = {
   'volcano': {
-    'text': 'Marry at a Volcano',
+    'text': 'At a Volcano',
     'description': 'how brave and creative you are!'
   },
   'castle': {
@@ -53,8 +57,9 @@ const gGuessResult = {
 };
 
 const resultText = (name) => gGuessResult[name]['text'];
+const shareText = (xxx) => 'OMG! My quiz result is to get married ' + xxx.toLowerCase() +
+                         '. lol, check where is yours that fit personality.';
 const resultImage = (name) => gUrlPrefix + '/img/places/' + name + '.png';
-const resultDescription = (name) => gGuessResult[name]['description'];
 
 const hashCode = (str) => {
   var hash = 0, i, chr, len;
@@ -78,10 +83,18 @@ function Result(props) {
     console.log("posting my like");
     window.FB.ui({
       method: 'feed',
-      link: resultImage(result),
+      link: gUrlPrefix,
+      picture: resultImage(result),
+      description: shareText(resultText(result)),
       caption: resultText(result),
-      description: resultDescription(result)
-    }, function(response){});
+      user_message_prompt: 'Share Marry Guess with friends!'
+    }, function(response) {
+      if (response && response.post_id) {
+        alert('Post was published.');
+      } else {
+        alert('Post was not published.');
+      }
+    });
   }
 
   return (
@@ -102,7 +115,7 @@ function Result(props) {
         </button>
       </div>
       <div className="row" id="ladymarry">
-        Enter an estimate date, and get a customized wedding checklist on <a href="https://ladymarry.com">LadyMarry</a> App. Download the app and create one Today!
+        Enter an estimated date, and get a customized wedding checklist on <a href="https://ladymarry.com">LadyMarry</a> App. Download the app and create one Today!
       </div>
       <div id="app-store" className="row twelve columns">
         <ul>

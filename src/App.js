@@ -144,7 +144,7 @@ class App extends Component {
       <div className="row">
         <FacebookLogin
             className="row"
-            appId="1852389581718892"
+            appId="142095429615113"
             fields="name,email,picture"
             cssClass="show-me-now-button"
             textButton={gClickButton}
