@@ -175,3 +175,11 @@ div.row {
 a.disabled {
     pointer-events: none;
 }
+
+@media (min-width: 550px) {
+.main {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+}
+}

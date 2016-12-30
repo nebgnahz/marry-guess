@@ -125,7 +125,7 @@ class App extends Component {
 
   renderPending() {
     return (
-      <div className="container">
+      <div className="container main">
         <Pending done={this.setSelfResult.bind(this)}/>
       </div>
     )
@@ -133,7 +133,7 @@ class App extends Component {
 
   renderResult() {
     return (
-      <div className="container">
+      <div className="container main">
         <Result username={this.state.username} />
       </div>
     )
@@ -156,7 +156,7 @@ class App extends Component {
 
   renderLanding() {
     return (
-      <div>
+      <div className="main">
         <div className="row">
           <Banner image="./img/where-bg.jpg"/>
         </div>
