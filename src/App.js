@@ -67,12 +67,11 @@ class App extends Component {
         login: true,
       });
 
-      if (response.name === 'Ben Zhang') {
-        // Enable debugging
-        this.setState({
-          logEnabled: true,
-        });
-      }
+      // if (response.name === 'Ben Zhang') {
+      //   this.setState({
+      //     logEnabled: true,
+      //   });
+      // }
 
       this.handleClick();
       return;
