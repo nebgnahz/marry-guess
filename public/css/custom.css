@@ -57,11 +57,12 @@ div.row {
     padding: 1rem;
 }
 
-#anti-virus {
-    position: fixed;
-    bottom: 0px;
+.footer {
+    position: absolute;
+    right: 0;
+    left: 0;
     border-top: 1px #ddd solid;
-    padding-top: 1rem;
+    padding: 1rem;
     width: 80%;
     left: 40%;
     margin-left: -30%;

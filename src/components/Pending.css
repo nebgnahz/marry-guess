@@ -41,13 +41,3 @@
     from { }
     to { width: 100% }
 }
-
-#pending-footer {
-    position: fixed;
-    bottom: 0px;
-    border-top: 1px #ddd solid;
-    padding-top: 1rem;
-    width: 80%;
-    left: 40%;
-    margin-left: -30%;
-}

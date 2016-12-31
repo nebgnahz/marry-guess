@@ -3,7 +3,7 @@ import React from 'react';
 function Header(props) {
   return (
     <div className='header'>
-      <a href="//ladymarry.xyz">
+    <a href={window.location.href}>
         <img className="header-image filter"
              src="./img/logo.png"
              role="presentation"/>

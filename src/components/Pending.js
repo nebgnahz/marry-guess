@@ -49,7 +49,7 @@ class Pending extends Component {
         <div className="row">
           <p className="pending-text">{this.state.pendingStatus}</p>
         </div>
-        <div id="pending-footer">
+        <div className="footer">
           <p className="text-center text-small">Smart Quiz Made by LadyMarry</p>
         </div>
       </div>

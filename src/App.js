@@ -164,7 +164,7 @@ class App extends Component {
             {this.renderFBLogin()}
             <p className="text-center text-small" id="fb-message">{gLogInFbMessage}</p>
           </div>
-          <div id="anti-virus">
+          <div className="footer" id="anti-virus">
             <p className="text-small text-center">Antivirus Protected by LadyMarry</p>
           </div>
         </div>
