@@ -73,9 +73,15 @@ const hashCode = (str) => {
 };
 
 function Result(props) {
-  var firstName = props.username.split(' ').slice(0, -1).join(' ');
+  var firstName = '';
+  var index = 0;
+  try {
+    firstName = props.username.split(' ').slice(0, -1).join(' ');
+    index = hashCode(props.username) % gResultArray.length;
+  } catch (e) {
+    console.log(e);
+  }
 
-  var index = hashCode(props.username) % gResultArray.length;
   var result = gResultArray[index];
 
   console.log(result);
@@ -100,7 +106,7 @@ function Result(props) {
   return (
     <div className="answer">
       <div className="row">
-        <p>{(props.username ? firstName + ', t' : 'T') + 'he perfect wedding venue for you: '}</p>
+        <p>{(firstName !== '' ? firstName + ', t' : 'T') + 'he perfect wedding venue for you: '}</p>
       </div>
       <div className="answer-text-box">
         <p>{resultText(result)}</p>

@@ -35,7 +35,7 @@ div.banner-box p {
     margin-top: 10%;
     margin-bottom: 1rem;
     line-height: 0.6;
-    font-size: 1.7rem;
+    font-size: 2.0rem;
 }
 
 div.banner-box p:first-child {
@@ -44,7 +44,7 @@ div.banner-box p:first-child {
 
 div.banner-box .banner-text-fancy {
     font-family: 'Dancing Script', cursive;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 #white-line {
