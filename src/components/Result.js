@@ -59,7 +59,7 @@ const gGuessResult = {
 const resultText = (name) => gGuessResult[name]['text'];
 const shareText = (xxx) => 'OMG! My quiz result is to get married ' + xxx.toLowerCase() +
                          '. lol, check where is yours that fit personality.';
-const resultImage = (name) => gUrlPrefix + '/img/places/' + name + '.png';
+const resultImage = (name) => gUrlPrefix + 'img/places/' + name + '.png';
 
 const hashCode = (str) => {
   var hash = 0, i, chr, len;
