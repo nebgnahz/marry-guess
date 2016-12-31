@@ -1,7 +1,7 @@
 import React from 'react';
 import './Result.css';
 
-const gUrlPrefix = 'http://ladymarry.xyz';
+const gUrlPrefix = window.location.href;
 const gResultArray = ['volcano',
                       'castle',
                       'plane',
