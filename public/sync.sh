@@ -15,6 +15,6 @@ for ans in "${!answers[@]}";
 do
     echo "$ans - ${answers[$ans]}";
     cp template.html $ans.html
-    sed -i '' -e "s/xxxxx/$ans/g" $ans.html
-    sed -i '' -e "s/yyyyyyyyy/${answers[$ans]}/g" $ans.html
+    sed -i "s/xxxxx/$ans/g" $ans.html
+    sed -i "s/yyyyyyyyy/${answers[$ans]}/g" $ans.html
 done
