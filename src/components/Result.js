@@ -89,7 +89,7 @@ function Result(props) {
     console.log("posting my like");
     window.FB.ui({
       method: 'feed',
-      link: gUrlPrefix,
+      link: gUrlPrefix + result + '.html',
       picture: resultImage(result),
       description: shareText(resultText(result)),
       caption: resultText(result),
