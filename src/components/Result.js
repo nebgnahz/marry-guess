@@ -86,7 +86,7 @@ function Result(props) {
 
   console.log(result);
   var postLike = function() {
-    console.log("posting my like");
+    console.log("sharing my result");
     window.FB.ui({
       method: 'feed',
       link: gUrlPrefix + result + '.html',
@@ -96,9 +96,9 @@ function Result(props) {
       user_message_prompt: 'Share Marry Guess with friends!'
     }, function(response) {
       if (response && response.post_id) {
-        alert('Post was published.');
+        alert('Shared!');
       } else {
-        alert('Post was not published.');
+        alert('Post was not shared.');
       }
     });
   }
