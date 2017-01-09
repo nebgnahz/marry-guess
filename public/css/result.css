@@ -1,0 +1,94 @@
+.answer {
+    position: relative;
+    padding-top: 1rem;
+}
+
+.answer .row {
+    padding-bottom: 0rem;
+    font-size: 1.3rem;
+}
+
+.answer .row span {
+    font-size: 1.6rem;
+    line-height: 1.0rem;
+}
+
+.answer p {
+    margin-bottom: 1rem;
+}
+
+#share-button {
+    background: #4267b2;
+    border: 1px solid #4267b2;
+    color: #fff;
+    font-family: Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-user-select: none;
+
+    margin-left: 10%;
+    margin-top: 0.5rem;
+    font-size: 1.1em;
+    width: 80%;
+}
+
+#share-button i {
+    vertical-align: -0.6rem;
+    font-size: 2em;
+    margin-right: 1rem;
+}
+
+#share-button span {
+    font-size: 1.2rem;
+}
+
+#ladymarry {
+    border-top: 1px solid #ddd;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#app-store ul li {
+    display: inline;
+    margin: 0 20px 0 0;
+    margin-bottom: 130px;
+}
+
+#app-store {
+    padding-top: 0rem;
+}
+
+#app-store a {
+    text-decoration: none;
+}
+
+#app-store .half {
+    width: 42%;
+}
+
+.answer-text-box {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25%;
+    width: 80%;
+    height: 4.4rem;
+    border: 1px solid black;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1px;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    text-align: center;
+
+    /* Overlay on top of the image */
+    z-index: 1;
+}
+
+.answer-image-2 {
+    width: 100%;
+    border-radius: 5px;
+}
