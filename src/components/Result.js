@@ -60,6 +60,7 @@ const resultText = (name) => gGuessResult[name]['text'];
 const shareText = (xxx) => 'OMG! My quiz result is to get married ' + xxx.toLowerCase() +
                          '. lol, check where is yours that fit personality.';
 const resultImage = (name) => gUrlPrefix + 'img/places/' + name + '.png';
+const resultUrl = (name) => gUrlPrefix + name + '.html';
 
 const hashCode = (str) => {
   var hash = 0, i, chr, len;
@@ -89,7 +90,7 @@ function Result(props) {
     console.log("sharing my result");
     window.FB.ui({
       method: 'feed',
-      link: gUrlPrefix + result + '.html',
+      link: resultUrl(result),
       picture: resultImage(result),
       description: shareText(resultText(result)),
       caption: resultText(result),
